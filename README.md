@@ -56,8 +56,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
-``
+```
 ## Authenticate & Create data frame using data in sheets
+```
 from google.colab import auth
 import gspread
 from google.auth import default
@@ -70,32 +71,43 @@ dataset1=pd.DataFrame(data[1:],columns=data[0])
 dataset1=dataset1.astype({'input':'float'})
 dataset1=dataset1.astype({'output':'float'})
 dataset1.head()
+```
 ## Assign X & Y Values
+```
 X = dataset1[['input']].values
 y = dataset1[['output']].values
 X
+```
 ## Normalize the values and split the data
+```
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = 0.33,random_state = 33)
 Scaler = MinMaxScaler()
 Scaler.fit(X_train)
 X_train1 = Scaler.transform(X_train)
+```
 ## Create a Neural Network and train it
+```
 ai_brain=Sequential([
     Dense(8,activation='relu'),
     Dense(10,activation='relu'),
     Dense(1)
 ])
+
 ai_brain.compile(optimizer='rmsprop',loss='mse')
 ai_brain.fit(X_train1,y_train,epochs=200)
+```
 ## Plot the loss
+```
 loss_df = pd.DataFrame(ai_brain.history.history)
 loss_df.plot()
+```
 ## Predict for some value
+```
 X_test1 = Scaler.transform(X_test)
 X_n1 = [[30]]
 X_n1_1 = Scaler.transform(X_n1)
 ai_brain.predict(X_n1_1)
-```
+
 ```
 ## Dataset Information
 
