@@ -109,6 +109,7 @@ X_n1_1 = Scaler.transform(X_n1)
 ai_brain.predict(X_n1_1)
 
 ```
+```
 ## Dataset Information
 
 ![image](https://github.com/Nagadurg/basic-nn-model/assets/94185707/989cd3fb-98b7-40a4-9194-178d1c9cf83b)
