@@ -50,11 +50,13 @@ Evaluate the model with the testing data.
 ## PROGRAM
 ```
 ## Importing modules
+```
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
+``
 ## Authenticate & Create data frame using data in sheets
 from google.colab import auth
 import gspread
@@ -94,7 +96,7 @@ X_n1 = [[30]]
 X_n1_1 = Scaler.transform(X_n1)
 ai_brain.predict(X_n1_1)
 ```
-
+```
 ## Dataset Information
 
 ![image](https://github.com/Nagadurg/basic-nn-model/assets/94185707/989cd3fb-98b7-40a4-9194-178d1c9cf83b)
